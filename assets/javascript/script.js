@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var clearBtn = document.querySelector("#clear");
 var passwordText = document.querySelector("#password");
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 var lowLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -21,6 +22,7 @@ function writePassword() {
   function generatePassword () {
     window.confirm ("Generate new password?"); {
       //function clearPass () { passwordText.value = '';};
+      //passwordText.value = newPass.replace("");
       if (!generatePassword) {
         return;
       //length of password (8-128 characters)
@@ -78,9 +80,13 @@ function writePassword() {
         };
         //console.log(newPass.join(""));
         //password diplayed (written to page)
-        passwordText.value = newPass.join("");
+        passwordText.value = newPass.toString("");
       };  
-    };              
+    };             
   };
 };
-       
+clearBtn.addEventListener('click', function () {
+  window.location.reload();
+}, false);
+
+     
