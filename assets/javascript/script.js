@@ -1,21 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
 var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 var lowLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var capLetters = [];
-///capital letters from lowwercase(capitalized)
+///capital letters from lowercase
 lowLetters.forEach(element => {
   capLetters.push(element.toUpperCase());
 });
 //console.log(capLetters);
 var spclCharacters = ["!","#","$","%","&","(",")","*","+","-",".","/",":",";","<","=",">","?","@","[","]","^",",","_","`","{","|","}","~"];
-
 var charPool = [];
+var newPass = [];
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -72,13 +68,18 @@ function writePassword() {
         if (!inclLow && !inclCap && !inclNum && !inclSpcl) {
           window.alert("You must include at least one character type!");
           return;
-        }
-        console.log(charPool) 
+        };
+        //console.log(charPool);
+        //pick (passLength) # of caracters from new selected pool (charPool)
+        for (var i = 0; i < passLength; i++) {
+          //password generated
+          newPass.push(charPool[Math.floor(Math.random() * charPool.length)]);
+        };
+        console.log(newPass.join(""));
+        //password diplayed (alert/written to page)
+        passwordText.value = newPass.join("");
       };  
     };              
   };
 };
        
-//password generated
-
-//password diplayed (alert/written to page)
