@@ -1,9 +1,10 @@
+/**uinversal styling**/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
+/**general styling for conent of page **/
 html,
 body,
 .wrapper {
@@ -16,7 +17,7 @@ body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
-
+/**rapper conating visble items on page**/
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -29,7 +30,7 @@ header {
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
-
+/**styling for lower portion of page, box containg text area and buttons**/
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -41,7 +42,7 @@ header {
   max-width: 800px;
   padding: 30px 40px;
 }
-
+/**psuedo for compostion **/
 .card-header::after {
   content: " ";
   display: block;
@@ -49,11 +50,11 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
-
+/**box conating text area**/
 .card-body {
   min-height: 100px;
 }
-
+/**stylng and psuedo classes applied for lower portion of content **/
 .card-footer {
   text-align: center;
 }
@@ -71,7 +72,7 @@ header {
   display: block;
   clear: both;
 }
-
+/**styling for both buttons**/
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -96,7 +97,7 @@ button[disabled] {
 .float-right {
   float: right;
 }
-
+/**appended content for text area**/
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -117,7 +118,7 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
-
+/**styling for different media types/screen sizes**/
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

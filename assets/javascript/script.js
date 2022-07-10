@@ -11,18 +11,16 @@ lowLetters.forEach(element => {
 });
 //console.log(capLetters);
 var spclCharacters = ["!","#","$","%","&","(",")","*","+","-",".","/",":",";","<","=",">","?","@","[","]","^",",","_","`","{","|","}","~"];
-//pool of characters to generate new password from
+// pool of characters to generate new password from
 var charPool = [];
-//array to push generated password to
-var newPass = [];
 // Add event listener to generate button
 generateBtn.addEventListener("click",writePassword);
 function writePassword() {
+  //local array to push generated password to
+  var newPass = [];
   var password = generatePassword();
   function generatePassword () {
     window.confirm ("Generate new password?"); {
-      //function clearPass () { passwordText.value = '';};
-      //passwordText.value = newPass.replace("");
       if (!generatePassword) {
         return;
       //length of password (8-128 characters)
@@ -85,7 +83,7 @@ function writePassword() {
         };
         //console.log(newPass.join(""));
         //password diplayed (written to page)
-        passwordText.value = newPass.toString("");
+        passwordText.value = newPass.join("");
       };  
     };             
   };
@@ -93,5 +91,3 @@ function writePassword() {
 clearBtn.addEventListener('click', function () {
   window.location.reload();
 }, false);
-
-     
