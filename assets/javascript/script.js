@@ -10,16 +10,17 @@ lowLetters.forEach(element => {
 });
 //console.log(capLetters);
 var spclCharacters = ["!","#","$","%","&","(",")","*","+","-",".","/",":",";","<","=",">","?","@","[","]","^",",","_","`","{","|","}","~"];
+//pool of characters to generate new password from
 var charPool = [];
+//array to push generated password to
 var newPass = [];
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
+generateBtn.addEventListener("click",writePassword);
 function writePassword() {
   var password = generatePassword();
   function generatePassword () {
     window.confirm ("Generate new password?"); {
+      //function clearPass () { passwordText.value = '';};
       if (!generatePassword) {
         return;
       //length of password (8-128 characters)
@@ -64,7 +65,7 @@ function writePassword() {
               charPool.push(spclCharacters);
             })}; 
         }; 
-        // validate at least on character type
+        //validate at least one character type
         if (!inclLow && !inclCap && !inclNum && !inclSpcl) {
           window.alert("You must include at least one character type!");
           return;
@@ -75,8 +76,8 @@ function writePassword() {
           //password generated
           newPass.push(charPool[Math.floor(Math.random() * charPool.length)]);
         };
-        console.log(newPass.join(""));
-        //password diplayed (alert/written to page)
+        //console.log(newPass.join(""));
+        //password diplayed (written to page)
         passwordText.value = newPass.join("");
       };  
     };              
