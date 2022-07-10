@@ -30,9 +30,14 @@ function writePassword() {
         var passLength = window.prompt("Length of password? (8-128 characters)"); {
           //validate password is 8-128 characters
           if (passLength < 8 || passLength > 128) {
-            window.alert("Password length must be between 8 & 128 characters.");
+            window.alert("Password length must be 8-128 characters.");
             return;
             };
+            if (isNaN(passLength)) {
+            window.alert("Password length must be number.");
+            return;
+            };
+          
         };
         //character type (lowercase, uppercase, numeric, and/or special characters)
         var inclLow = window.confirm("Include lowercase letters?"); {
